@@ -1,372 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Promoción Invierno – Pollo a la Brasa</title>
 
+<!-- SEO y Open Graph -->
+<meta name="description" content="Chabuca45 – Pollo a la Brasa peruano. Menú especial de invierno: Pollo + Chaufa + Coca-Cola. Delivery y recogida en Alcobendas.">
+<meta property="og:title" content="Promoción Invierno – Pollo a la Brasa">
+<meta property="og:description" content="Chabuca45 – Pollo a la Brasa peruano. Menú especial de invierno: Pollo + Chaufa + Coca-Cola. Delivery y recogida en Alcobendas.">
+<meta property="og:image" content="imagenes/pollo_brasa.jpg">
+<link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
+
+<!-- Fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --rojo: #b3261e;
-    --dorado: #e5a542;
-    --oscuro: #1a1a1a;
-    --fondo: #f7f3eb;
-    --texto: #3a3a3a;
-    --gris: #666;
-    --sombra: rgba(0, 0, 0, 0.15);
-  }
+:root {
+  --rojo: #b3261e;
+  --dorado: #e5a542;
+  --oscuro: #1a1a1a;
+  --fondo: #f7f3eb;
+  --texto: #3a3a3a;
+  --gris: #666;
+  --sombra: rgba(0, 0, 0, 0.15);
+}
 
-  /* RESET */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
+/* RESET */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {font-family: 'Poppins', Arial, sans-serif; background: var(--fondo); color: var(--texto); overflow-x: hidden;}
 
-  body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background: var(--fondo);
-    color: var(--texto);
-    overflow-x: hidden;
-  }
+/* Banner superior */
+.banner {
+  background: linear-gradient(90deg, var(--rojo), var(--dorado));
+  color: white;
+  text-align: center;
+  padding: 12px 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 3px 6px var(--sombra);
+}
 
-  /* Banner superior */
-  .banner {
-    background: linear-gradient(90deg, #b3261e, #e5a542);
-    color: white;
-    text-align: center;
-    padding: 12px 10px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    box-shadow: 0 3px 6px var(--sombra);
-  }
+/* HEADER */
+header {background: linear-gradient(120deg, var(--oscuro), #3f3f3f); padding: 50px 20px; text-align: center; color: white;}
+header h1 {font-family: 'Roboto Slab', serif; font-size: 2.8rem; font-weight: 700; letter-spacing: 1px;}
 
-  /* ENCABEZADO */
-  header {
-    background: linear-gradient(120deg, #1a1a1a, #3f3f3f);
-    padding: 50px 20px;
-    text-align: center;
-    color: white;
-  }
+/* CONTENEDOR */
+.container {max-width: 1100px; margin: 40px auto; padding: 0 20px 40px;}
 
-  header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
+/* GALERÍA */
+.galeria {display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 50px;}
+.tarjeta {
+  background: white;
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 300px;
+  box-shadow: 0 5px 20px var(--sombra);
+  transition: 0.3s ease, transform 0.3s;
+  cursor: pointer;
+}
+.tarjeta:hover {transform: translateY(-7px) scale(1.03); box-shadow: 0 12px 30px var(--sombra);}
+.tarjeta img {width: 100%; border-radius: 12px; height: 200px; object-fit: cover;}
+.tarjeta p {margin-top: 10px; font-weight: 600; font-size: 1rem; text-align: center;}
 
-  /* CONTENEDOR */
-  .container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px 40px;
-  }
+/* MENÚ */
+h2 {font-family: 'Roboto Slab', serif; font-size: 2rem; margin-bottom: 10px; color: var(--rojo);}
+ul {font-size: 1.2rem; line-height: 1.8; margin-bottom: 30px;}
+.precio {text-align: center; font-size: 3rem; font-weight: 700; color: var(--dorado); margin-bottom: 20px; text-shadow: 1px 1px 5px rgba(0,0,0,0.1);}
+.delivery-info {text-align: center; font-size: 1.3rem; margin-bottom: 20px;}
 
-  /* GALERÍA */
-  .galeria {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
-  }
+/* BOTÓN ANIMADO REBOTE */
+@keyframes bounce {0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);}}
+.btn {
+  display: block;
+  background: var(--rojo);
+  color: white;
+  text-align: center;
+  width: 300px;
+  padding: 15px;
+  margin: 0 auto 40px;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(179, 38, 30, 0.4);
+  transition: background 0.3s, transform 0.3s;
+  animation: bounce 2s infinite;
+}
+.btn:hover {background: #901c16; transform: scale(1.05);}
 
-  .tarjeta {
-    background: white;
-    border-radius: 15px;
-    padding: 10px;
-    max-width: 300px;
-    box-shadow: 0 5px 20px var(--sombra);
-    transition: 0.3s ease;
-    cursor: default;
-  }
+/* UBICACIÓN */
+.ubicacion {text-align: center; font-size: 1.2rem; margin-bottom: 50px;}
 
-  .tarjeta:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px var(--sombra);
-  }
+/* MAPA */
+.mapa {border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px var(--sombra); margin-bottom: 80px;}
+iframe {width: 100%; height: 350px; border: none;}
 
-  .tarjeta img {
-    width: 100%;
-    border-radius: 12px;
-    height: 200px;
-    object-fit: cover;
-  }
+/* QUIÉNES SOMOS CON VIDEO */
+.quienes-somos {background: white; padding: 30px 20px; border-radius: 15px; box-shadow: 0 5px 25px var(--sombra); margin-bottom: 50px;}
+.quienes-somos h2 {color: var(--rojo); margin-bottom: 15px;}
+.quienes-somos p {font-size: 1.1rem; line-height: 1.7;}
+.video-section {position: relative; border-radius: 15px; overflow: hidden; margin-bottom: 50px; box-shadow: 0 5px 25px var(--sombra);}
+.video-fondo {position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; object-fit: cover; transform: translate(-50%, -50%); filter: brightness(0.5); z-index: 0;}
+.video-overlay {position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.35); z-index:0;}
+.video-contenido {position: relative; padding: 30px 20px; z-index: 1; color: white;}
+.video-contenido h2 {color: var(--dorado); margin-bottom: 15px;}
+.video-contenido p {font-size: 1.1rem; line-height: 1.7;}
 
-  .tarjeta p {
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 1rem;
-  }
+/* TESTIMONIOS CARRUSEL */
+.testimonios {background: white; padding: 30px 20px; border-radius: 15px; box-shadow: 0 5px 25px var(--sombra); margin-bottom: 80px; position: relative; overflow: hidden;}
+.testimonios h2 {color: var(--rojo); margin-bottom: 25px; text-align: center;}
+.testimonial-list {display: flex; transition: transform 0.5s ease-in-out;}
+.testimonial {min-width: 300px; padding: 20px; background: #f9f8f6; border-radius: 15px; box-shadow: inset 0 0 8px #ddd; flex-shrink: 0; font-style: italic; color: var(--gris); margin-right: 20px;}
+.testimonial p {margin-bottom: 10px;}
+.testimonial .autor {font-weight: 700; font-style: normal; text-align: right; color: var(--rojo);}
 
-  /* MENÚ */
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: var(--rojo);
-  }
+/* FLOAT DELIVERY BUTTON */
+.btn-float {position: fixed; bottom: 20px; right: 20px; background: var(--rojo); color: white; padding: 15px 18px; border-radius: 50px; font-size: 1.4rem; box-shadow: 0 5px 20px rgba(179, 38, 30, 0.6); z-index: 99999; cursor: pointer; transition: background 0.3s, transform 0.3s; text-decoration: none;}
+.btn-float:hover {background: #901c16; transform: scale(1.1);}
 
-  ul {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 30px;
-  }
+/* NIEVE */
+@keyframes nieve {0% {transform: translateY(-10px); opacity:1;} 100% {transform: translateY(100vh); opacity:0;}}
+.nieve {pointer-events: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden; z-index: 10000;}
+.nieve span {position: absolute; top: -10px; background: white; border-radius: 50%; opacity: 0.8; animation-name: nieve; animation-timing-function: linear; animation-iteration-count: infinite;}
+.nieve span:nth-child(1){left:5vw;width:10px;height:10px;animation-duration:8s;animation-delay:0s;}
+.nieve span:nth-child(2){left:15vw;width:15px;height:15px;animation-duration:10s;animation-delay:2s;}
+.nieve span:nth-child(3){left:25vw;width:8px;height:8px;animation-duration:9s;animation-delay:4s;}
+.nieve span:nth-child(4){left:35vw;width:12px;height:12px;animation-duration:11s;animation-delay:6s;}
+.nieve span:nth-child(5){left:45vw;width:7px;height:7px;animation-duration:7s;animation-delay:8s;}
+.nieve span:nth-child(6){left:55vw;width:14px;height:14px;animation-duration:12s;animation-delay:1s;}
+.nieve span:nth-child(7){left:65vw;width:10px;height:10px;animation-duration:9s;animation-delay:3s;}
+.nieve span:nth-child(8){left:75vw;width:6px;height:6px;animation-duration:8s;animation-delay:5s;}
+.nieve span:nth-child(9){left:85vw;width:9px;height:9px;animation-duration:10s;animation-delay:7s;}
+.nieve span:nth-child(10){left:95vw;width:11px;height:11px;animation-duration:11s;animation-delay:9s;}
 
-  /* PRECIO */
-  .precio {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--dorado);
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-  }
+/* SCROLL FADE */
+.fade-slide {opacity:0; transform:translateY(30px); transition: all 0.8s ease-out;}
+.fade-slide.visible {opacity:1; transform:translateY(0);}
 
-  /* DELIVERY INFO */
-  .delivery-info {
-    text-align: center;
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-  }
+/* FOOTER */
+footer {background: var(--oscuro); color: white; padding: 40px 20px; text-align: center;}
+footer a {color: var(--dorado); text-decoration: none; margin: 0 10px; transition: color 0.3s;}
+footer a:hover {color: var(--rojo);}
+footer p {margin-top: 15px; font-size: 0.9rem;}
 
-  /* BOTÓN */
-  .btn {
-    display: block;
-    background: var(--rojo);
-    color: white;
-    text-align: center;
-    width: 300px;
-    padding: 15px;
-    margin: 0 auto 40px;
-    border-radius: 50px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(179, 38, 30, 0.4);
-    transition: background 0.3s, transform 0.3s;
-  }
-
-  .btn:hover {
-    background: #901c16;
-    transform: scale(1.05);
-  }
-
-  /* UBICACIÓN */
-  .ubicacion {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 50px;
-  }
-
-  /* MAPA */
-  .mapa {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px var(--sombra);
-    margin-bottom: 80px;
-  }
-
-  iframe {
-    width: 100%;
-    height: 350px;
-    border: none;
-  }
-
-  /* QUIÉNES SOMOS */
-  .quienes-somos {
-    background: white;
-    padding: 30px 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px var(--sombra);
-    margin-bottom: 50px;
-  }
-
-  .quienes-somos h2 {
-    color: var(--rojo);
-    margin-bottom: 15px;
-  }
-
-  .quienes-somos p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-
-  /* TESTIMONIOS */
-  .testimonios {
-    background: white;
-    padding: 30px 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px var(--sombra);
-    margin-bottom: 80px;
-  }
-
-  .testimonios h2 {
-    color: var(--rojo);
-    margin-bottom: 25px;
-    text-align: center;
-  }
-
-  .testimonial-list {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding-bottom: 10px;
-  }
-
-  .testimonial {
-    min-width: 300px;
-    padding: 20px;
-    background: #f9f8f6;
-    border-radius: 15px;
-    box-shadow: inset 0 0 8px #ddd;
-    flex-shrink: 0;
-    font-style: italic;
-    color: var(--gris);
-  }
-
-  .testimonial p {
-    margin-bottom: 10px;
-  }
-
-  .testimonial .autor {
-    font-weight: 700;
-    font-style: normal;
-    text-align: right;
-    color: var(--rojo);
-  }
-
-  /* FLOAT DELIVERY BUTTON */
-  .btn-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--rojo);
-    color: white;
-    padding: 15px 18px;
-    border-radius: 50px;
-    font-size: 1.4rem;
-    box-shadow: 0 5px 20px rgba(179, 38, 30, 0.6);
-    z-index: 99999;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-    text-decoration: none;
-  }
-
-  .btn-float:hover {
-    background: #901c16;
-    transform: scale(1.1);
-  }
-
-  /* EFECTO DE NIEVE */
-  @keyframes nieve {
-    0% {
-      transform: translateY(-10px);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(100vh);
-      opacity: 0;
-    }
-  }
-
-  .nieve {
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 10000;
-  }
-
-  .nieve span {
-    position: absolute;
-    top: -10px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation-name: nieve;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-
-  /* Generamos múltiples copias con tamaños y posiciones aleatorias */
-  .nieve span:nth-child(1) {
-    left: 5vw; width: 10px; height: 10px; animation-duration: 8s; animation-delay: 0s;
-  }
-  .nieve span:nth-child(2) {
-    left: 15vw; width: 15px; height: 15px; animation-duration: 10s; animation-delay: 2s;
-  }
-  .nieve span:nth-child(3) {
-    left: 25vw; width: 8px; height: 8px; animation-duration: 9s; animation-delay: 4s;
-  }
-  .nieve span:nth-child(4) {
-    left: 35vw; width: 12px; height: 12px; animation-duration: 11s; animation-delay: 6s;
-  }
-  .nieve span:nth-child(5) {
-    left: 45vw; width: 7px; height: 7px; animation-duration: 7s; animation-delay: 8s;
-  }
-  .nieve span:nth-child(6) {
-    left: 55vw; width: 14px; height: 14px; animation-duration: 12s; animation-delay: 1s;
-  }
-  .nieve span:nth-child(7) {
-    left: 65vw; width: 10px; height: 10px; animation-duration: 9s; animation-delay: 3s;
-  }
-  .nieve span:nth-child(8) {
-    left: 75vw; width: 6px; height: 6px; animation-duration: 8s; animation-delay: 5s;
-  }
-  .nieve span:nth-child(9) {
-    left: 85vw; width: 9px; height: 9px; animation-duration: 10s; animation-delay: 7s;
-  }
-  .nieve span:nth-child(10) {
-    left: 95vw; width: 11px; height: 11px; animation-duration: 11s; animation-delay: 9s;
-  }
-
-  /* ANIMACIONES SUAVES AL SCROLL (fade y slide up) */
-  .fade-slide {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-  }
-  .fade-slide.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .galeria {
-      justify-content: center;
-    }
-    .testimonial-list {
-      flex-wrap: nowrap;
-    }
-    .tarjeta, .testimonial {
-      max-width: 280px;
-    }
-  }
-
-  @media (max-width: 400px) {
-    .btn {
-      width: 100%;
-    }
-    .btn-float {
-      font-size: 1.2rem;
-      padding: 12px 14px;
-      bottom: 15px;
-      right: 15px;
-    }
-  }
-
+/* RESPONSIVE */
+@media (max-width: 768px) {.galeria {justify-content: center;}}
+@media (max-width: 400px) {.btn {width: 100%;} .btn-float {font-size:1.2rem;padding:12px 14px;bottom:15px;right:15px;}}
 </style>
 </head>
 <body>
 
-<!-- Banner Promocional -->
+<!-- Banner -->
 <div class="banner fade-slide">
   🌟 ¡Oferta Invierno! Pollo a la Brasa + Chaufa + Coca-Cola por solo <strong>24.99 €</strong> 🌟
 </div>
@@ -379,18 +168,9 @@
 
   <!-- GALERÍA -->
   <div class="galeria fade-slide">
-    <div class="tarjeta">
-      <img src="imagenes/pollo_brasa.jpg" alt="Pollo a la brasa con papas" />
-      <p>Pollo a la brasa con papas</p>
-    </div>
-    <div class="tarjeta">
-      <img src="imagenes/chaufa_brasa.jpg" alt="Pollo a la brasa con chaufa" />
-      <p>Pollo a la brasa con chaufa</p>
-    </div>
-    <div class="tarjeta">
-      <img src="imagenes/pollo_brasa_coca-cola.jpg" alt="Pollo a la brasa con Coca-Cola" />
-      <p>Pollo a la brasa con Coca-Cola</p>
-    </div>
+    <div class="tarjeta"><img src="imagenes/pollo_brasa.jpg" alt="Pollo a la brasa con papas"><p>Pollo a la brasa con papas</p></div>
+    <div class="tarjeta"><img src="imagenes/chaufa_brasa.jpg" alt="Pollo a la brasa con chaufa"><p>Pollo a la brasa con chaufa</p></div>
+    <div class="tarjeta"><img src="imagenes/pollo_brasa_coca-cola.jpg" alt="Pollo a la brasa con Coca-Cola"><p>Pollo a la brasa con Coca-Cola</p></div>
   </div>
 
   <!-- MENÚ -->
@@ -404,47 +184,32 @@
     <div class="precio">24.99 €</div>
     <p class="delivery-info">📦 Delivery o recogida en el local</p>
     <a href="https://wa.me/########" class="btn" target="_blank" rel="noopener noreferrer">📲 Hacer Pedido</a>
-    <div class="ubicacion">
-      📍 Calle Capitán Francisco Sánchez Nº 19<br />
-      Alcobendas
+    <div class="ubicacion">📍 Calle Capitán Francisco Sánchez Nº 19, Alcobendas</div>
+  </section>
+
+  <!-- QUIÉNES SOMOS CON VIDEO -->
+  <section class="quienes-somos fade-slide video-section">
+    <video autoplay muted loop playsinline class="video-fondo"><source src="videos/chabuca.mp4" type="video/mp4"></video>
+    <div class="video-overlay"></div>
+    <div class="video-contenido">
+      <h2>¿Quiénes Somos?</h2>
+      <p>En Chabuca45 nos apasiona el auténtico Pollo a la Brasa peruano. Utilizamos ingredientes frescos y técnicas tradicionales para que cada bocado sea inolvidable.</p>
     </div>
   </section>
 
-  <!-- QUIÉNES SOMOS -->
-  <section class="quienes-somos fade-slide">
-    <h2>¿Quiénes Somos?</h2>
-    <p>
-      En Chabuca45 nos apasiona el auténtico Pollo a la Brasa peruano. 
-      Utilizamos ingredientes frescos y técnicas tradicionales para que cada bocado sea una experiencia inolvidable. 
-      Nuestro compromiso es ofrecer calidad y sabor a cada cliente, en un ambiente acogedor y familiar.
-    </p>
-  </section>
-
-  <!-- TESTIMONIOS -->
+  <!-- TESTIMONIOS CARRUSEL -->
   <section class="testimonios fade-slide">
     <h2>Testimonios</h2>
-    <div class="testimonial-list" tabindex="0">
-      <article class="testimonial">
-        <p>"El mejor pollo a la brasa que he probado, ¡súper jugoso y delicioso!"</p>
-        <p class="autor">— María G.</p>
-      </article>
-      <article class="testimonial">
-        <p>"El servicio fue rápido y el delivery llegó caliente. Muy recomendable."</p>
-        <p class="autor">— Juan P.</p>
-      </article>
-      <article class="testimonial">
-        <p>"El menú especial de invierno es perfecto para el frío, todo riquísimo."</p>
-        <p class="autor">— Lucía M.</p>
-      </article>
+    <div class="testimonial-list" id="testimonialList">
+      <article class="testimonial"><p>"El mejor pollo a la brasa que he probado, ¡súper jugoso y delicioso!"</p><p class="autor">— María G.</p></article>
+      <article class="testimonial"><p>"El servicio fue rápido y el delivery llegó caliente. Muy recomendable."</p><p class="autor">— Juan P.</p></article>
+      <article class="testimonial"><p>"El menú especial de invierno es perfecto para el frío, todo riquísimo."</p><p class="autor">— Lucía M.</p></article>
     </div>
   </section>
 
   <!-- MAPA -->
   <div class="mapa fade-slide">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.033146228003!2d-3.6353015999999997!3d40.5398689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422cf776e4ae4b%3A0x3a5b7d93bfd36c99!2sC.%20del%20Capit%C3%A1n%20Francisco%20S%C3%A1nchez%2C%2019%2C%2028100%20Alcobendas%2C%20Madrid!5e0!3m2!1ses!2ses!4v1700000000000" 
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.033146228003!2d-3.6353015999999997!3d40.5398689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422cf776e4ae4b%3A0x3a5b7d93bfd36c99!2sC.%20del%20Capit%C3%A1n%20Francisco%20S%C3%A1nchez%2C%2019%2C%2028100%20Alcobendas%2C%20Madrid!5e0!3m2!1ses!2ses!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 
 </div>
@@ -453,22 +218,33 @@
 <a href="https://wa.me/########" class="btn-float" aria-label="Llamar a delivery" target="_blank" rel="noopener noreferrer">📞</a>
 
 <!-- NIEVE -->
-<div class="nieve" aria-hidden="true">
-  <span></span><span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span><span></span>
-</div>
+<div class="nieve" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- FOOTER -->
+<footer class="fade-slide">
+  <p>Chabuca45 – Pollo a la Brasa | Alcobendas</p>
+  <p>Síguenos en:
+    <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a> |
+    <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a> |
+    <a href="#" target="_blank" rel="noopener noreferrer">TikTok</a>
+  </p>
+  <p>© 2025 Chabuca45. Todos los derechos reservados.</p>
+</footer>
 
 <script>
-  // ANIMACIONES AL SCROLL (fade-slide)
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.2 });
+// Fade al scroll
+const faders = document.querySelectorAll('.fade-slide');
+const observer = new IntersectionObserver(entries => {entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:0.2});
+faders.forEach(fader => observer.observe(fader));
 
-  document.querySelectorAll('.fade-slide').forEach(el => observer.observe(el));
+// Carrusel automático testimonios
+const testimonialList = document.getElementById('testimonialList');
+let testimonialIndex = 0;
+setInterval(() => {
+  testimonialIndex++;
+  if(testimonialIndex > testimonialList.children.length - 1) testimonialIndex = 0;
+  testimonialList.style.transform = `translateX(-${testimonialIndex * 320}px)`;
+}, 4000);
 </script>
 
 </body>
